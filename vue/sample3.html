@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>iij-bootcample Vue.js</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+      
+      <script type="text/javascript">
+        const app = new Vue({
+          el: '#app',
+          data: {
+            message: 'Welcome to iij-bootcamp!!'
+          },
+          methods: {
+            reverseMessage: function () {
+              this.message = this.message.split('').reverse().join('')
+            }
+          }
+        })
+      </script>
+</body>
+</html>

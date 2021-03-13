@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>iij-bootcample Vue.js</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  ここにメッセージ↓
+  <div id="app">{{ message }}</div>
+
+  <table id="people_table" border="1">
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </table>
+
+  <script type="text/javascript">
+    const message = "Welcome to iij-bootcamp!!";
+
+    const elem = document.getElementById("app");
+    elem.innerText = message;
+
+    const peoples = [
+      { id: 1, name: 'taro' },
+      { id: 2, name: 'jiro' },
+      { id: 3, name: 'saburo' }
+    ];
+    const table = document.getElementById("people_table");
+    peoples.forEach(people => {
+      const tr = document.createElement("tr");
+      const idTd = document.createElement("td");
+      const nameTd = document.createElement("td");
+
+      idTd.innerText = people.id;
+      nameTd.innerText = people.name;
+
+      tr.appendChild(idTd);
+      tr.appendChild(nameTd);
+
+      table.appendChild(tr);
+    });
+  </script>
+</body>
+
+</html>
